@@ -1,0 +1,53 @@
+{
+    "name": "silabs-firmware-recovery",
+    "description": "Tools to help in the recovery of misbehaving/bricked devices",
+    "version": "0.0.1",
+    "author": "Nerivec",
+    "bugs": "https://github.com/Nerivec/silabs-firmware-recovery/issues",
+    "devDependencies": {
+        "@eslint/core": "^0.8.0",
+        "@eslint/js": "^9.14.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+        "@types/node": "^22.8.7",
+        "eslint": "^9.14.0",
+        "eslint-config-prettier": "^9.1.0",
+        "prettier": "^3.3.3",
+        "shx": "^0.3.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3",
+        "typescript-eslint": "^8.13.0"
+    },
+    "engines": {
+        "node": ">=22.2.0"
+    },
+    "homepage": "https://github.com/Nerivec/silabs-firmware-recovery",
+    "keywords": [
+        "zigbee",
+        "silabs",
+        "silicon-labs",
+        "ember",
+        "emberznet",
+        "zigbee2mqtt",
+        "ezsp",
+        "bricked",
+        "z2m"
+    ],
+    "license": "GPL-3.0-or-later",
+    "main": "dist/index.js",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Nerivec/silabs-firmware-recovery.git"
+    },
+    "scripts": {
+        "build": "tsc -b",
+        "rebuild": "shx rm -rf dist tsconfig.tsbuildinfo && tsc -b",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "eslint": "eslint . --max-warnings=0",
+        "test": "jest test --config=./tests/jest.config.ts --silent --runInBand",
+        "coverage": "jest test --config=./tests/jest.config.ts --silent --runInBand --coverage",
+        "build-gbls": "node dist/index.js build-gbls",
+        "test-gbl": "node dist/test_gbl.js"
+    }
+}

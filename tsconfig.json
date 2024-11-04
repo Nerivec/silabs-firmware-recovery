@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "strict": true,
+        "declaration": true,
+        "noUnusedLocals": true,
+        "esModuleInterop": true
+    },
+    "include": ["./src/**/*", "./eslint.config.mjs", "./.prettierrc.js"],
+    "ts-node": {
+        "esm": true
+    }
+}

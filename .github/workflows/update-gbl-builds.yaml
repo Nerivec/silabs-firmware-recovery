@@ -1,0 +1,42 @@
+name: Update GBL builds
+on:
+    workflow_dispatch:
+    push:
+        branches: [master]
+        paths: ['src/**']
+
+permissions:
+    contents: write
+
+jobs:
+    update-gbl-builds:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: pnpm/action-setup@v4
+              with:
+                  version: 9
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: 'package.json'
+                  registry-url: https://registry.npmjs.org/
+                  cache: pnpm
+
+            - name: Install dependencies
+              run: pnpm i --frozen-lockfile
+
+            - name: Build
+              run: pnpm run build
+
+            - name: Re-create GBL builds
+              run: pnpm run build-gbls
+
+            - name: Commit changes on push
+              run: |
+                  git config --global user.name 'github-actions[bot]'
+                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+                  git add .
+                  git commit -m "Update GBL builds" || echo 'Nothing to commit'
+                  git push
