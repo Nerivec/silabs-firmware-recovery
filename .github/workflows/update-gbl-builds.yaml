@@ -2,7 +2,7 @@ name: Update GBL builds
 on:
     workflow_dispatch:
     push:
-        branches: [master]
+        branches: [main]
         paths: ['src/**']
 
 permissions:
