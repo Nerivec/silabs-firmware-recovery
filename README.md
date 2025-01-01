@@ -3,7 +3,7 @@
 Tools to help in the recovery of misbehaving/bricked devices.
 
 > [!CAUTION]
-> This is highly experimental, and should only be used as a last resort. Consult the manufacturer of your device before. **Use as your own risk; no guarantee anything will work.**
+> This is highly experimental, and should only be used as a last resort. Consult the manufacturer of your device before. **Use at your own risk; no guarantee anything will work.**
 
 # GBL firmware to clear flash areas
 
