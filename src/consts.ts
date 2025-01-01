@@ -56,8 +56,6 @@ const EFR32MG21A020F768IM32_FLASH_BASE = 0x00000000;
 
 /**
  * platform/Device/SiliconLabs/EFR32MG21/Include/efr32mg21a020f768im32.h
- *
- * PROGRAM_DATA2 OFFSET 16,384
  */
 export const CHIP_EFR32MG21A020F768IM32: ChipInfo = {
     chip: 'EFR32MG21A020F768IM32',
@@ -80,8 +78,6 @@ const EFR32MG21A020F1024IM32_FLASH_BASE = 0x00000000;
 
 /**
  * platform/Device/SiliconLabs/EFR32MG21/Include/efr32mg21a020f1024im32.h
- *
- * PROGRAM_DATA2 OFFSET 16,384
  */
 export const CHIP_EFR32MG21A020F1024IM32: ChipInfo = {
     chip: 'EFR32MG21A020F1024IM32',
@@ -104,8 +100,6 @@ const EFR32MG24A020F1024IM40_FLASH_BASE = 0x08000000;
 
 /**
  * platform/Device/SiliconLabs/EFR32MG24/Include/efr32mg24a020f1024im40.h
- *
- * PROGRAM_DATA2 OFFSET 134,242,304
  */
 export const CHIP_EFR32MG24A020F1024IM40: ChipInfo = {
     chip: 'EFR32MG24A020F1024IM40',
@@ -128,8 +122,6 @@ export const MGM240PA32VNN_FLASH_BASE = 0x08000000;
 
 /**
  * platform/Device/SiliconLabs/MGM24/Include/mgm240pa32vnn.h
- *
- * PROGRAM_DATA2 OFFSET 134,242,304
  */
 export const CHIP_MGM240PA32VNN: ChipInfo = {
     chip: 'MGM240PA32VNN',
@@ -152,8 +144,6 @@ const MGM240PB32VNN_FLASH_BASE = 0x08000000;
 
 /**
  * platform/Device/SiliconLabs/MGM24/Include/mgm240pb32vnn.h
- *
- * PROGRAM_DATA2 OFFSET 134,242,304
  */
 export const CHIP_MGM240PB32VNN: ChipInfo = {
     chip: 'MGM240PB32VNN',
@@ -163,6 +153,50 @@ export const CHIP_MGM240PB32VNN: ChipInfo = {
     flashPageSize: 0x00002000,
 
     btlApplicationBase: MGM240PB32VNN_FLASH_BASE + 0x00006000,
+
+    nvm3DefaultNVMSizes: [NVM3_DEFAULT_NVM_SIZE, 32768],
+
+    userdataBase: 0x0fe00000,
+    userdataSize: 0x00000400,
+    userdataEnd: 0x0fe003ff,
+    userdataBits: 0xb,
+};
+
+const MGM240PB32VNA_FLASH_BASE = 0x08000000;
+
+/**
+ * platform/Device/SiliconLabs/MGM24/Include/mgm240pb32vna.h
+ */
+export const CHIP_MGM240PB32VNA: ChipInfo = {
+    chip: 'MGM240PB32VNA',
+
+    flashBase: MGM240PB32VNA_FLASH_BASE,
+    flashSize: 0x00180000,
+    flashPageSize: 0x00002000,
+
+    btlApplicationBase: MGM240PB32VNA_FLASH_BASE + 0x00006000,
+
+    nvm3DefaultNVMSizes: [NVM3_DEFAULT_NVM_SIZE, 32768],
+
+    userdataBase: 0x0fe00000,
+    userdataSize: 0x00000400,
+    userdataEnd: 0x0fe003ff,
+    userdataBits: 0xb,
+};
+
+const EFR32MG24B220F1536IM48_FLASH_BASE = 0x08000000;
+
+/**
+ * platform/Device/SiliconLabs/MGM24/Include/efr32mg24b220f1536im48.h
+ */
+export const CHIP_EFR32MG24B220F1536IM48: ChipInfo = {
+    chip: 'EFR32MG24B220F1536IM48',
+
+    flashBase: EFR32MG24B220F1536IM48_FLASH_BASE,
+    flashSize: 0x00180000,
+    flashPageSize: 0x00002000,
+
+    btlApplicationBase: EFR32MG24B220F1536IM48_FLASH_BASE + 0x00006000,
 
     nvm3DefaultNVMSizes: [NVM3_DEFAULT_NVM_SIZE, 32768],
 

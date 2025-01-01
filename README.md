@@ -40,7 +40,7 @@ The file name format is as follow:
 `<CHIP_NAME>_<GBL_TYPE>_<FLASH_BASE>_<FLASH_SIZE>_<FLASH_PAGE_SIZE>_<BTL_APPLICATION_BASE>_<NVM3_DEFAULT_NVM_SIZE>.gbl`
 
 > [!IMPORTANT]
-> Current builds are only intended for use with default project parameters (no customization to the bootloader or other relevant areas) used by `silabs-firmware-builder` projects. Check in the relevant location ([example](https://github.com/NabuCasa/silabs-firmware-builder/blob/522332517f5bd9fb1c418c2c883596b4879fe8e1/src/zigbee_ncp/zigbee_ncp.slcp#L48-L49)) in the repository of your firmware provider for the `NVM3_DEFAULT_NVM_SIZE` you should use.
+> Current builds are only intended for use with default project parameters (no customization to the bootloader or other relevant areas) used by `silabs-firmware-builder` projects. Check in the relevant location ([example](https://github.com/NabuCasa/silabs-firmware-builder/blob/522332517f5bd9fb1c418c2c883596b4879fe8e1/src/zigbee_ncp/zigbee_ncp.slcp#L48-L49)) in the repository of your firmware provider for the `NVM3_DEFAULT_NVM_SIZE` you should use (in most cases, it should be, NCP: 32768, RCP: 40960).
 
 #### Tested on:
 
@@ -60,3 +60,24 @@ The file name format is as follow:
 
 -   SMLight SLZB07mg24 (`EFR32MG24A020F1024IM40_app_clear_134217728_1048576_8192_134242304.gbl`)
 -   TubesZB MGM24PA (`MGM240PA32VNN_app_clear_134217728_1572864_8192_134242304.gbl`)
+
+# Chips for most common adapters
+
+You can check the manifests in a [silabs-firmware-builder](https://github.com/Nerivec/silabs-firmware-builder/tree/main/manifests) repository to see the chip used by an adapter (usually on the second line, "device: ").
+
+-   Aeotec ZGA008: EFR32MG21A020F1024IM32
+-   easyiot ZB-GW04-1v1: EFR32MG21A020F768IM32
+-   easyiot ZB-GW04-1v2: EFR32MG21A020F768IM32
+-   NabuCasa SkyConnect: EFR32MG21A020F512IM32
+-   NabuCasa Yellow: MGM210PA32JIA
+-   SeeedStudio XiaoMG24: EFR32MG24B220F1536IM48
+-   SMLIGHT SLZB-06M: EFR32MG21A020F768IM32
+-   SMLIGHT SLZB-07MG24: EFR32MG24A020F1024IM40
+-   SMLIGHT SLZB-07: EFR32MG21A020F768IM32
+-   SONOFF DONGLE-E: EFR32MG21A020F768IM32
+-   SparkFun MGM240P: MGM240PB32VNA
+-   TubesZB MGM24: MGM240PA32VNN
+-   TubesZB MGM24PB: MGM240PB32VNN
+
+> [!CAUTION]
+> Always confirm the chip and adapter you are flashing are correct, else risk more problems.

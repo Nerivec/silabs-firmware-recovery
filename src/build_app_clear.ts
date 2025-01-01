@@ -1,8 +1,8 @@
 import type { ChipInfo } from './types.js';
 
-import { readFileSync, rmSync, writeFileSync } from 'fs';
-import path from 'path';
-import { crc32 } from 'zlib';
+import { readFileSync, rmSync, writeFileSync } from 'node:fs';
+import path from 'node:path';
+import { crc32 } from 'node:zlib';
 
 import { GBL_BUILD_DIR } from './consts.js';
 import { GBLTagId } from './enums.js';

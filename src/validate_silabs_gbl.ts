@@ -1,5 +1,5 @@
-import assert from 'assert';
-import { crc32 } from 'zlib';
+import assert from 'node:assert';
+import { crc32 } from 'node:zlib';
 
 import { VALID_SILABS_CRC } from './consts.js';
 import { GBLTagId } from './enums.js';
