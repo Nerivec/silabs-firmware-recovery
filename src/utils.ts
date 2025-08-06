@@ -1,4 +1,4 @@
-import { GBLTagId } from './enums.js';
+import type { GBLTagId } from "./enums.js";
 
 export function gblTagToBuffer(tag: GBLTagId): Buffer {
     const buf = Buffer.alloc(4);

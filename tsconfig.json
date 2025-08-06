@@ -10,7 +10,7 @@
         "noUnusedLocals": true,
         "esModuleInterop": true
     },
-    "include": ["./src/**/*", "./eslint.config.mjs", "./.prettierrc.js"],
+    "include": ["./src/**/*"],
     "ts-node": {
         "esm": true
     }

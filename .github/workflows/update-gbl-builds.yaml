@@ -1,43 +1,38 @@
 name: Update GBL builds
 
 on:
-    workflow_dispatch:
-    push:
-        branches: [main]
-        paths: ['src/**']
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["src/**"]
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    update-gbl-builds:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
+  update-gbl-builds:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: "package.json"
 
-            - uses: actions/setup-node@v4
-              with:
-                  node-version-file: 'package.json'
-                  registry-url: https://registry.npmjs.org/
-                  cache: pnpm
+      - run: npm ci
 
-            - name: Install dependencies
-              run: pnpm i --frozen-lockfile
+      - run: npm run build
 
-            - name: Build
-              run: pnpm run build
+      - name: Re-create GBL builds
+        run: npm run build-gbls
 
-            - name: Re-create GBL builds
-              run: pnpm run build-gbls
+      - name: Test GBL builds
+        run: npm run test-gbl
 
-            - name: Commit changes on push
-              run: |
-                  git config --global user.name 'github-actions[bot]'
-                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-                  git add .
-                  git commit -m "Update GBL builds" || echo 'Nothing to commit'
-                  git push
+      - name: Commit changes on push
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update GBL builds" || echo 'Nothing to commit'
+          git push

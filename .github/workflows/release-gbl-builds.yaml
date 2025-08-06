@@ -1,19 +1,19 @@
 name: Release GBL builds
 
 on:
-    release:
-        types:
-            - published
+  release:
+    types:
+      - published
 
 jobs:
-    release-assets:
-        name: Create release with GBLs
-        runs-on: ubuntu-latest
-        permissions:
-            contents: write
-        steps:
-            - uses: actions/checkout@v4
+  release-assets:
+    name: Create release with GBLs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
 
-            - uses: softprops/action-gh-release@v2
-              with:
-                  files: gbl-builds/*.gbl
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: gbl-builds/*.gbl
