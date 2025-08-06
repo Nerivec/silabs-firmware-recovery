@@ -42,10 +42,6 @@ The file name format is as follow:
 > [!IMPORTANT]
 > Current builds are only intended for use with default project parameters (no customization to the bootloader or other relevant areas) used by `silabs-firmware-builder` projects. Check in the relevant location ([example](https://github.com/NabuCasa/silabs-firmware-builder/blob/522332517f5bd9fb1c418c2c883596b4879fe8e1/src/zigbee_ncp/zigbee_ncp.slcp#L48-L49)) in the repository of your firmware provider for the `NVM3_DEFAULT_NVM_SIZE` you should use (in most cases, it should be, NCP: 32768, RCP: 40960).
 
-#### Tested on:
-
--   Sonoff ZBDongle-E NCP (`EFR32MG21A020F768IM32_nvm3_clear_0_786432_8192_16384_32768.gbl`)
-
 ## APP Clear
 
 Clears the entire section after the bootloader (including NVM3). Erases any firmware previously flashed. After flashing, only the bootloader will be available (automatically entered by the chip), and a new firmware will have to be flashed then run.
@@ -55,11 +51,6 @@ The file name format is as follow:
 
 > [!IMPORTANT]
 > These are unusually big GBL files, flashing will take a lot longer than usual (~5 minutes for serial, 2-3 times that for TCP). Make sure your connection is solid and won't drop over the duration or you may have to start over.
-
-#### Tested on bricked:
-
--   SMLight SLZB07mg24 (`EFR32MG24A020F1024IM40_app_clear_134217728_1048576_8192_134242304.gbl`)
--   TubesZB MGM24PA (`MGM240PA32VNN_app_clear_134217728_1572864_8192_134242304.gbl`)
 
 # Chips for most common adapters
 
