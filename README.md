@@ -70,8 +70,8 @@ You can check the manifests in a [silabs-firmware-builder](https://github.com/Ne
 -   SMLIGHT SLZB-07MG24: EFR32MG24A020F1024IM40
 -   SONOFF DONGLE-E: EFR32MG21A020F768IM32
 -   SparkFun MGM240P: MGM240PB32VNA
+-   TubesZB BM24: EFR32MG24A420F1536IM48
 -   TubesZB MGM24: MGM240PA32VNN
--   TubesZB MGM24PB: MGM240PB32VNN
 
 > [!CAUTION]
 > Always confirm the chip and adapter you are flashing are correct, else risk more problems.

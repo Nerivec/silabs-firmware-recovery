@@ -146,6 +146,28 @@ export const CHIP_EFR32MG24A420F1536IM40: ChipInfo = {
     userdataBits: 0xb,
 };
 
+const EFR32MG24A420F1536IM48_FLASH_BASE = 0x08000000;
+
+/**
+ * platform/Device/SiliconLabs/EFR32MG24/Include/efr32mg24a420f1536im48.h
+ */
+export const CHIP_EFR32MG24A420F1536IM48: ChipInfo = {
+    chip: "EFR32MG24A420F1536IM48",
+
+    flashBase: EFR32MG24A420F1536IM48_FLASH_BASE,
+    flashSize: 0x00180000,
+    flashPageSize: 0x00002000,
+
+    btlApplicationBase: EFR32MG24A420F1536IM48_FLASH_BASE + 0x00006000,
+
+    nvm3DefaultNVMSizes: [NVM3_DEFAULT_NVM_SIZE, 32768],
+
+    userdataBase: 0x0fe00000,
+    userdataSize: 0x00000400,
+    userdataEnd: 0x0fe003ff,
+    userdataBits: 0xb,
+};
+
 const EFR32MG24B220F1536IM48_FLASH_BASE = 0x08000000;
 
 /**
