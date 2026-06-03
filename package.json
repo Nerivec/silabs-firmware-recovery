@@ -5,9 +5,9 @@
     "author": "Nerivec",
     "bugs": "https://github.com/Nerivec/silabs-firmware-recovery/issues",
     "devDependencies": {
-        "@biomejs/biome": "^2.4.15",
+        "@biomejs/biome": "^2.4.16",
         "@types/node": "^25.9.1",
-        "tsx": "^4.22.3",
+        "tsx": "^4.22.4",
         "typescript": "^6.0.3"
     },
     "engines": {
