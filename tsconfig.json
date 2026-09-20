@@ -5,6 +5,7 @@
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "target": "ESNext",
+        "types": ["node"],
         "strict": true,
         "declaration": true,
         "noUnusedLocals": true,
